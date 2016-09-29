@@ -9,5 +9,5 @@
 bundle install --path=vendor/bundle
 bundle exec rake db:create
 bundle exec rake db:migrate
-mysql -uroot sql_study_development < tmp/test.dump
+mysql -uroot sql_study_development < test.dump
 ```
