@@ -1,0 +1,27 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: sql_study_development
+
+test:
+  <<: *default
+  database: sql_study_test
+
+staging:
+  <<: *default
+  database: sql_study_staging
+  username: rails4_user
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
+production:
+  <<: *default
+  database: sql_study_production
+  username: rails4_user
+  password: <%= ENV['DATABASE_PASSWORD'] %>
